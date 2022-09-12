@@ -16,9 +16,13 @@
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended"
       ],
       "rules": {
+        "no-unused-vars": "error",
+        "no-console": "error",
+        "extra-rules/no-commented-out-code": "error",
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -41,10 +45,14 @@
       "files": [
         "*.html"
       ],
+      "plugins": ["extra-rules"],
       "extends": [
-        "plugin:@angular-eslint/template/recommended"
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:prettier/recommended"
       ],
-      "rules": {}
+      "rules": {
+        "prettier/prettier": ["error", { "parser": "angular" }]
+      }
     }
   ]
 }

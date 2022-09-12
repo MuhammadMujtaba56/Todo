@@ -1,6 +1,50 @@
-# AngularTemplateProject
+# Angular Template Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+
+# Getting Started
+
+`npm install` to install all dependencies.
+
+#Features
+
+- Bootstrap 5.2.0
+- Typescript 4.7.2
+- Angular Material 1.2.5
+- Lodash 4.17.21
+- Ngrx store 14.3.0
+- Angular Testing Library 12.1.2
+- Git Hooks via Husky 8.0.0
+- Eslint 8.18.0
+- Prettier 2.7.1
+- Prettier-eslint 15.0.1
+
+# Project Structure
+
+- src
+  - main
+    - app
+      - auth
+        - components
+        - services
+        - constants
+      - shared
+        - store
+          - actions
+          - reducers
+          - state
+        - utils
+          - components
+      - app-routing
+      - app-constants
+      - components
+    - assets
+    - content
+    - index.html
+    - environments
+  - test
+    - modules
+      - test classes
 
 ## Development server
 

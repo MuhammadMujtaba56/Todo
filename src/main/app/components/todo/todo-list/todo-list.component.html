@@ -3,7 +3,7 @@
 </ng-template>
 
 <ul *ngIf="todoList?.length; else noData">
-  <li class="list_element" *ngFor="let element of todoList.reverse()">
+  <li class="list_element" *ngFor="let element of todoList">
     <div>
       <input
         type="checkbox"

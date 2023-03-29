@@ -1,0 +1,84 @@
+.container {
+    padding: 3.125em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_todo {
+    display: flex;
+    justify-content: center;
+    border: 0.187rem solid rgb(161, 112, 216);
+    width: max-content;
+}
+
+.add_todo input {
+    width: 18.75rem;
+    padding: 0 2em;
+    border: none;
+}
+
+.add_todo button {
+    background-color: skyblue;
+    border: none;
+    color: white;
+    width: 5.31rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.add_todo button:hover:enabled{
+    background-color: rgb(19, 117, 209);
+}
+
+.list_todo {
+    background-color: white;
+    border: 0.187rem solid rgb(161, 112, 216);
+    width: 27.5rem;
+    margin-top: 2em;
+}
+
+.list_todo ul {
+    padding-left: 0;
+}
+
+.list_element {
+    height: 2rem;
+    border-bottom: 0.06rem solid #8e8e8e;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0 0.5em 0.5em 0.5em;
+    padding: 0 0.5em;
+
+}
+
+.list_element div p {
+    margin-bottom: 0;
+    display: inline-block;
+    margin-left: 1em;
+    /* color: #8e8e8e; */
+}
+
+.list_element div input {
+    display: inline-block;
+}
+
+.no_data{
+   text-align: center;
+}
+
+.bi{
+    color: #8e8e8e;
+    cursor: pointer;
+}
+
+.bi:hover{
+    color: black;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: #8e8e8e;
+}

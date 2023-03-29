@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+    <h1><u>ToDo App</u></h1>
+    <div class="add_todo">
+      <input
+        placeholder="What will you do today?"
+        [(ngModel)]="description"
+        maxlength="25" />
+      <button (click)="addTodo()" [disabled]="!description">ADD</button>
+    </div>
+
+    <div class="list_todo">
+      <app-todo-list
+        (checkTodo)="checkTodo($event)"
+        [todoList]="todoList"
+        (deleteTodo)="deleteTodo($event)"></app-todo-list>
+    </div>
+  </div>
+</section>

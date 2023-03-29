@@ -1,0 +1,18 @@
+<ng-template #noData>
+  <h1 class="no_data">No Data</h1>
+</ng-template>
+
+<ul *ngIf="todoList.length; else noData">
+  <li class="list_element" *ngFor="let element of todoList.reverse()">
+    <div>
+      <input
+        type="checkbox"
+        [value]="element.isChecked"
+        (click)="isChecked(element)" />
+      <p [ngClass]="element.isChecked ? 'strikethrough' : ''">
+        {{ element.description }}
+      </p>
+    </div>
+    <span (click)="isDeleted(element)"><i class="bi bi-trash-fill"></i></span>
+  </li>
+</ul>

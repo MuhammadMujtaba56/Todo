@@ -24,20 +24,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - src
   - main
     - app
-      - auth
-        - components
-        - services
-        - constants
-      - shared
-        - store
-          - actions
-          - reducers
-          - state
-        - utils
-          - components
+      - components
+      - interfaces
+      - services
+      - constants
       - app-routing
       - app-constants
-      - components
     - assets
     - content
     - index.html

@@ -11,6 +11,7 @@ import { HttpService } from '../../services/http.service';
 export class TodoComponent implements OnInit {
   todoList!: ITodo[];
   description!: string;
+  isLoading!: boolean;
 
   constructor(private http: HttpService) {
     this.description = '';
@@ -22,6 +23,7 @@ export class TodoComponent implements OnInit {
   }
 
   addTodo() {
+    this.isLoading = true;
     if (this.description) {
       const temp: ITodo = {
         id: Math.floor(Math.random() * Constants.RANGE),
@@ -34,10 +36,12 @@ export class TodoComponent implements OnInit {
         next: (res: any) => {
           if (res) {
             this.description = '';
+            this.isLoading = false;
             this.getList();
           }
         },
         error: err => {
+          this.isLoading = false;
           alert(`Error: ${err.message}`);
         },
       });
@@ -45,19 +49,29 @@ export class TodoComponent implements OnInit {
   }
 
   deleteTodo(element: ITodo) {
-    this.todoList = this.todoList.filter(
-      (item: ITodo) => item.id !== element.id
-    );
+    this.http.delete(element.id).subscribe({
+      next: res => {
+        if (res) {
+          this.getList();
+        }
+      },
+      error: err => {
+        alert(`Error: ${err.message}`);
+      },
+    });
   }
 
   checkTodo(element: ITodo) {
-    this.todoList = this.todoList.map((item: ITodo) => {
-      if (item.id === element.id) {
-        item.isChecked = !item.isChecked;
-        return item;
-      } else {
-        return item;
-      }
+    element.isChecked = !element.isChecked;
+    this.http.put(element.id, element).subscribe({
+      next: res => {
+        if (res) {
+          this.getList();
+        }
+      },
+      error: err => {
+        alert(`Error: ${err.message}`);
+      },
     });
   }
 

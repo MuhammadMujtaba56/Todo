@@ -20,4 +20,14 @@ export class HttpService {
   post(body: ITodo) {
     return this.http.post(this.url, body);
   }
+
+  put(id: number, body: ITodo) {
+    const url = this.url + `/${id}`;
+    return this.http.put(url, body);
+  }
+
+  delete(id: number) {
+    const url = this.url + `/${id}`;
+    return this.http.delete(url);
+  }
 }

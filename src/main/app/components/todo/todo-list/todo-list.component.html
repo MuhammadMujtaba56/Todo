@@ -7,11 +7,13 @@
     <div>
       <input
         type="checkbox"
-        [value]="element.isChecked"
+        [checked]="element.isChecked"
         (click)="isChecked(element)" />
-      <p [ngClass]="element.isChecked ? 'strikethrough' : ''">
-        {{ element.description }}
-      </p>
+      <div>
+        <span [ngClass]="element.isChecked ? 'strikethrough' : ''">
+          {{ element.description }}
+        </span>
+      </div>
     </div>
     <span (click)="isDeleted(element)"><i class="bi bi-trash-fill"></i></span>
   </li>

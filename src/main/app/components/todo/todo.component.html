@@ -3,10 +3,18 @@
     <h1><u>ToDo App</u></h1>
     <div class="add_todo">
       <input
+        autofocus
         placeholder="What will you do today?"
-        [(ngModel)]="description"
-        maxlength="25" />
-      <button (click)="addTodo()" [disabled]="!description">ADD</button>
+        [(ngModel)]="description" />
+      <button (click)="addTodo()" [disabled]="!description || isLoading">
+        ADD
+        <div
+          class="spinner-border spinner-border-sm"
+          role="status"
+          *ngIf="isLoading">
+          <span class="sr-only"></span>
+        </div>
+      </button>
     </div>
 
     <div class="list_todo">

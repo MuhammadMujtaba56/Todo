@@ -25,10 +25,10 @@
     color: white;
     width: 5.31rem;
     height: 2rem;
-    cursor: pointer;
 }
 
 .add_todo button:hover:enabled{
+    cursor: pointer;
     background-color: rgb(19, 117, 209);
 }
 
@@ -56,7 +56,7 @@
 
 .list_element div p {
     margin-bottom: 0;
-    display: inline-block;
+    display: inline;
     margin-left: 1em;
     /* color: #8e8e8e; */
 }

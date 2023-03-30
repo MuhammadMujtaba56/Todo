@@ -25,7 +25,7 @@ ul {
    flex-grow: 1;
 }
 
-.list_element div  textarea {
+.list_element div  textarea:disabled {
     width: 100%;
     margin-bottom: 0;
     border: none;
@@ -36,12 +36,10 @@ ul {
     text-align: start;
     overflow-x: hidden;
     resize: none;
+    color: black;
     
 }
 
-.list_element div  textarea:disabled{
-    color: black;
-}
 
 .list_element div input {
     display: inline-block;
@@ -62,7 +60,7 @@ ul {
     color: black;
 }
 
-.strikethrough {
+.strikethrough{
     text-decoration: line-through;
-    color: #8e8e8e;
+    color: #8e8e8e !important;
 }

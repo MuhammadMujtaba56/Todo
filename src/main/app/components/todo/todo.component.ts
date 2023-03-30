@@ -12,6 +12,7 @@ export class TodoComponent implements OnInit {
   todoList!: ITodo[];
   description!: string;
   isLoading!: boolean;
+  emptyError!: boolean;
 
   constructor(private http: HttpService) {
     this.description = '';
@@ -22,9 +23,14 @@ export class TodoComponent implements OnInit {
     this.getList();
   }
 
+  checkError() {
+    return (this.emptyError = this.description ? true : false);
+  }
+
   addTodo() {
-    this.isLoading = true;
     if (this.description) {
+      this.emptyError = false;
+      this.isLoading = true;
       const temp: ITodo = {
         id: Math.floor(Math.random() * Constants.RANGE),
         description: this.description,
@@ -45,6 +51,8 @@ export class TodoComponent implements OnInit {
           alert(`Error: ${err.message}`);
         },
       });
+    } else {
+      this.emptyError = true;
     }
   }
 

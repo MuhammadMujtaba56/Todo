@@ -13,10 +13,23 @@
     width: max-content;
 }
 
-.add_todo input {
+.add_todo textarea {
     width: 18.75rem;
     padding: 0 2em;
     border: none;
+    // overflow: scroll;
+}
+
+textarea{
+    resize: vertical;
+    max-height: 3.5rem;
+}
+
+span{
+    // background-color: white;
+    color: orange;
+    align-self: center;
+    border-bottom: 0.187rem solid red;
 }
 
 .add_todo button {
@@ -25,6 +38,7 @@
     color: white;
     width: 5.31rem;
     height: 2rem;
+    align-self: center;
 }
 
 .add_todo button:hover:enabled{

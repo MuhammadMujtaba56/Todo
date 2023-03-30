@@ -2,11 +2,13 @@
   <div class="container">
     <h1><u>ToDo App</u></h1>
     <div class="add_todo">
-      <input
+      <textarea
+        (focus)="checkError()"
         autofocus
         placeholder="What will you do today?"
-        [(ngModel)]="description" />
-      <button (click)="addTodo()" [disabled]="!description || isLoading">
+        rows="1"
+        [(ngModel)]="description"></textarea>
+      <button (click)="addTodo()" [disabled]="isLoading">
         ADD
         <div
           class="spinner-border spinner-border-sm"
@@ -16,6 +18,7 @@
         </div>
       </button>
     </div>
+    <span *ngIf="emptyError">*Enter text to Add Todo</span>
 
     <div class="list_todo">
       <app-todo-list

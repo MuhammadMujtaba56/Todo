@@ -9,11 +9,10 @@
         type="checkbox"
         [checked]="element.isChecked"
         (click)="isChecked(element)" />
-      <div>
-        <span [ngClass]="element.isChecked ? 'strikethrough' : ''">
-          {{ element.description }}
-        </span>
-      </div>
+
+      <textarea [ngClass]="element.isChecked ? 'strikethrough' : ''" disabled>{{
+        element.description
+      }}</textarea>
     </div>
     <span (click)="isDeleted(element)"><i class="bi bi-trash-fill"></i></span>
   </li>

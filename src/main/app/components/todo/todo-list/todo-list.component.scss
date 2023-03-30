@@ -22,13 +22,24 @@ ul {
 
 .list_element div {
    display: flex;
+   flex-grow: 1;
 }
 
-.list_element div div span {
+.list_element div  textarea {
+    width: 100%;
     margin-bottom: 0;
+    border: none;
     display: inline;
     margin-left: 1em;
-    padding: 0.2em;
+    height: 3rem;
+    text-align: start;
+    overflow-x: hidden;
+    resize: none;
+    
+}
+
+.list_element div  textarea:disabled{
+    color: black;
 }
 
 .list_element div input {

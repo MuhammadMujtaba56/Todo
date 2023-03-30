@@ -11,26 +11,28 @@
     justify-content: center;
     border: 0.187rem solid rgb(161, 112, 216);
     width: max-content;
+    flex-grow: 2;
+    flex-wrap: wrap;
 }
 
 .add_todo textarea {
     width: 18.75rem;
     padding: 0 2em;
-    border: none;
-    // overflow: scroll;
-}
-
-textarea{
     resize: vertical;
     min-height: 2rem;
     max-height: 3.5rem;
 }
 
-span{
-    // background-color: white;
+.invalidInput{
+    border: 0.187rem solid orange;
+    
+}
+
+
+span {
+    display: block;
     color: orange;
     align-self: center;
-    border-bottom: 0.187rem solid red;
 }
 
 .add_todo button {
@@ -42,7 +44,7 @@ span{
     align-self: center;
 }
 
-.add_todo button:hover:enabled{
+.add_todo button:hover:enabled {
     cursor: pointer;
     background-color: rgb(19, 117, 209);
 }
@@ -80,16 +82,16 @@ span{
     display: inline-block;
 }
 
-.no_data{
-   text-align: center;
+.no_data {
+    text-align: center;
 }
 
-.bi{
+.bi {
     color: #8e8e8e;
     cursor: pointer;
 }
 
-.bi:hover{
+.bi:hover {
     color: black;
 }
 
